@@ -6,14 +6,14 @@ const fs = require('fs');
 // });
 
 //Promise封装
-const p = new Promise((res, rej) => {
+const p = new Promise((resove, reject) => {
     fs.readFile('./resources/01.text', (err, data) => {
-        if (err) rej(err);
-        res(data);
+        if (err) reject(err);
+        resove(data);
     });
 })
 p.then((value) => {
-console.log(value.toString());
-}, (reason) => {
-console.log("01xx");
+    console.log(value.toString());
+}).catch((reason) => {
+    console.log("01xx");
 });
