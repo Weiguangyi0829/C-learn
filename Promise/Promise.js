@@ -12,6 +12,9 @@ const p = new Promise((resove, reject) => {
         resove(data);
     });
 })
+
+//then方法的返回结果是Promise对象，对象状态有回调函数执行结果决定
+
 p.then((value) => {
     console.log(value.toString());
 }).catch((reason) => {
