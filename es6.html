@@ -47,6 +47,7 @@
 
 
     //-----迭代器
+
     const xiyou = {
         name: "西游",
         list: ['唐僧', '孙悟空', '猪八戒', '沙僧'],
@@ -89,21 +90,21 @@
         setTimeout(() => {
             console.log(111);
             iterator.next();
-        },1000)
+        }, 1000)
     }
     function two() {
         setTimeout(() => {
             console.log(222);
             iterator.next();
-        },1000)
+        }, 1000)
     }
     function three() {
         setTimeout(() => {
             console.log(333);
             iterator.next();
-        },1000)
+        }, 1000)
     }
-    function* gen(){
+    function* gen() {
         yield one();
         yield two();
         yield three();
@@ -111,6 +112,44 @@
     //调用生成器函数
     let iterator = gen();
     iterator.next();
+
+
+
+
+
+    //-----Set
+
+    //去重
+    let arr = [1, 2, 3, 5, 4, 6, 5, 2, 1, 3, 2, 1, 2];
+    let arr2 = [4, 5, 2, 2, 3, 12]
+    // let result = [...new Set(arr)];
+
+    //交集
+    let result = [...new Set(arr)].filter((item) => new Set(arr2).has(item))
+    console.log(result);
+
+
+
+
+
+    //-----class
+
+    function Phone(brand,price){
+        this.brand = brand;
+        this.price = price;
+    }
+    //添加方法
+    Phone.prototype.call = function(){
+        console.log("打电话！！");
+    }
+    //实例化对象
+    let Huawei = new Phone('华为','5999')
+    Huawei.call();
+    console.log(Huawei);
+
+    
+
+
 
 
 
