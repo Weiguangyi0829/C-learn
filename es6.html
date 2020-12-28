@@ -126,7 +126,7 @@
 
     //交集
     let result = [...new Set(arr)].filter((item) => new Set(arr2).has(item))
-    console.log(result);
+    // console.log(result);
 
 
 
@@ -134,20 +134,58 @@
 
     //-----class
 
-    function Phone(brand,price){
+
+    //es5
+    function Phone1(brand, price) {
         this.brand = brand;
         this.price = price;
     }
     //添加方法
-    Phone.prototype.call = function(){
-        console.log("打电话！！");
+    Phone1.prototype.call = function () {
+        console.log("01打电话！！");
     }
     //实例化对象
-    let Huawei = new Phone('华为','5999')
-    Huawei.call();
+    let Huawei = new Phone1('华为', '5999')
+    // Huawei.call();
     console.log(Huawei);
 
-    
+
+    //es6
+    class Phone2 {
+        //构造方法
+        constructor(brand, price) {
+            this.brand = brand;
+            this.price = price;
+        }
+
+        call() {
+            console.log("打电话！！");
+        }
+    }
+
+    let onePlus = new Phone2("1+", "2999");
+    console.log(onePlus);
+
+    class Phone2_1 extends Phone2 {
+        constructor(brand, price, color, size) {
+            super(brand, price);//调用父类Phone2的constructor
+            this.color = color;
+            this.size = size;
+        }
+        photo() {
+            console.log("拍照");
+        }
+        playgame() {
+            console.log("玩游戏");
+        }
+    }
+
+    const xiaomi = new Phone2_1('xiaomi', 3999, 'black', '4.7inch');
+    // xiaomi.call();
+    // xiaomi.photo();
+    // xiaomi.playgame();
+    console.log(xiaomi);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+
 
 
 
