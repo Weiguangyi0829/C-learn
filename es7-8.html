@@ -22,6 +22,26 @@
         console.log(2 ** 10);
         console.log(Math.pow(2, 10));
 
+
+        //-----async await
+
+
+        const p - new Promise((resolve, reject) => {
+            reject("失败!")
+        })
+
+        //await要放在async函数中
+        async function main() {
+            try {
+                let result = await p;
+                console.log(result);
+            } catch (e) {
+                console.log(e);
+            }
+        }
+
+        main();
+
     </script>
 </body>
 
