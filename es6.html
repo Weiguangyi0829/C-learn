@@ -184,8 +184,27 @@
     // xiaomi.call();
     // xiaomi.photo();
     // xiaomi.playgame();
-    console.log(xiaomi);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+    console.log(xiaomi);
 
+
+
+
+
+    //-----对象合并
+    const config1 = {
+        host: 'localhost',
+        port: 8080,
+        name: '123',
+        psw1: '123'
+    }
+
+    const config2 = {
+        host: 'localhost',
+        port: 3030,
+        name: '456',
+        psw2: '456'
+    }
+    console.log(Object.assign(config1, config2));//后面的参数覆盖前面的
 
 
 
