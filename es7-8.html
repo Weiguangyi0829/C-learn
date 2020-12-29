@@ -26,11 +26,11 @@
         //-----async await
 
 
-        const p - new Promise((resolve, reject) => {
-            reject("失败!")
+        const p = new Promise((resolve, reject) => {
+            reject("失败!");
         })
 
-        //await要放在async函数中
+        //await要放在async函数中 是指Promise对象返回的值“失败！”
         async function main() {
             try {
                 let result = await p;
