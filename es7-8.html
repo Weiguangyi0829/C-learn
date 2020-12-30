@@ -70,6 +70,44 @@
         console.log(result);
         console.log(result.groups.url);
 
+        //-----flat
+
+        const arr = [1, 2, 3, [8, 9, 10, [11, 16]]];
+        console.log(arr.flat());
+        //参数为深度，默认值为1
+        console.log(arr.flat(2));
+
+
+
+        //-----私有属性
+
+        class Person {
+            //公有属性
+            //name;
+            //私有属性
+            //#age;
+            constructor(name, age) {
+                this.name = name;
+                // this.#age = age;
+            }
+
+            intro() {
+                // console.log(this.name);
+                // console.log(this.#age);
+            }
+
+        }
+
+        const girl = new Person('小红', 20);
+
+        girl.intro();
+        // console.log(girl.name);
+        // console.log(girl.#age);
+
+
+
+
+
     </script>
 </body>
 
